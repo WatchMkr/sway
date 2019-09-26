@@ -29,7 +29,7 @@ output eDP-1 scale 1
 # GNOME setup
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
-exec --no-startup-id 'nm-applet --indicator'
+#exec --no-startup-id 'nm-applet --indicator'
 
 # Gaps
 gaps inner 5
