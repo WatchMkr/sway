@@ -13,44 +13,47 @@ set $mod Mod4
 
 # My mods {
 
-# Suspend
-bindsym $mod+l exec swaylock --color=303030
+### Screen brightness
 
-# Menu
-#j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:DejaVu Sans Mono 12"' --term='termite'
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
+# Suspend
+bindsym $mod+n exec swaylock --color=303030
 
 # Wallpaper
 output DP-1 background /usr/share/backgrounds/pop/ricardo-gomez-angel-180819-blue.jpg fill
 output eDP-1 background ~/Pictures/Wallpapers/kate-hazen-mort1mer.png fill
-output eDP-1 scale 2
+output eDP-1 scale 1
 
 # GNOME setup
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec --no-startup-id 'nm-applet --indicator'
 
 # Gaps
-gaps inner 25
+gaps inner 5
 gaps outer 0
 smart_borders on
-#new_window none
+default_border pixel 2
 
 # start apps
-exec --no-startup-id albert
-exec --no-startup-id dunst
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec --no-startup-id albert
+#exec --no-startup-id dunst
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # custom keybindings
 bindsym $mod+Shift+Return exec firefox
 
 # Colors
 # Pop Dark Brown
-set $active #454240
+set $active #393736
 set $fg     #FFFFFF
 # Pop Light Brown
 set $bg     #524f4C
 
 # Window Border color   border  backgr  text  indicator  child_boder
-client.focused          $active $active $fg   $fg        $active
+client.focused          $active	$active $fg   $fg        $active
 client.focused_inactive $bg     $bg     $fg   $fg        $bg
 client.unfocused        $bg     $bg     $fg   $fg        $bg
 client.urgent           $bg     $bg     $fg   $fg        $bg
@@ -82,17 +85,19 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# installed.n
+#bindsym $mod+a exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+slash exec rofi -show drun
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -133,7 +138,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -212,5 +217,14 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	colors {
+		background #393736
+		focused_workspace #393736 #FFD7A1 #393736
+		urgent_workspace #393736 #E56A54 #393736
+		separator #FFD7A1
+	}
+	position top
+	height 25
+	font /usr/share/fonts/opentype/fira/FiraSans-Regular.otf
         status_command i3status
 }
