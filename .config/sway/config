@@ -216,15 +216,19 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+#bar {
+#	colors {
+#		background #393736
+#		focused_workspace #393736 #FFD7A1 #393736
+#		urgent_workspace #393736 #E56A54 #393736
+#		separator #FFD7A1
+#	}
+#	position top
+#	height 25
+#	font /usr/share/fonts/opentype/fira/FiraSans-Regular.otf
+#       status_command i3status
+#}
+
 bar {
-	colors {
-		background #393736
-		focused_workspace #393736 #FFD7A1 #393736
-		urgent_workspace #393736 #E56A54 #393736
-		separator #FFD7A1
-	}
-	position top
-	height 25
-	font /usr/share/fonts/opentype/fira/FiraSans-Regular.otf
-        status_command i3status
+	swaybar_command waybar
 }
