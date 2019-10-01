@@ -15,8 +15,6 @@ set $mod Mod4
 
 ### Screen brightness
 
-#bindsym XF86MonBrightnessUp exec light -A 2
-#bindsym XF86MonBrightnessDown exec light -U 2
 exec mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
 bindsym XF86MonBrightnessUp exec light -A 2 && light -G | cut -d'.' -f1 > /tmp/wobpipe
 bindsym XF86MonBrightnessDown exec light -U 2 && light -G | cut -d'.' -f1 > /tmp/wobpipe
