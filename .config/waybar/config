@@ -19,6 +19,7 @@
     },
     "clock": {
         "format": "{:%a %d %b %I:%M}",
+	"on-click": "gnome-calendar",
         "tooltip": false
     },
     "battery": {
