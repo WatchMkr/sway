@@ -40,7 +40,7 @@
     background-color: @background;
 }
 #mainbox {
-    border:  2;
+    border:  1;
     padding: 5;
     border-color: @blue;
 }
