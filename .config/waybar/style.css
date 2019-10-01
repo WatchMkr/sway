@@ -1,1 +1,58 @@
-../../../../.config/waybar/style.css
+* {
+    border:        none;
+    border-radius: 0;
+    font-family:   "Fira Sans Regular";
+    font-size:     15px;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
+}
+
+window {
+    color:      rgba(217, 216, 216, 1);
+    background: rgba(51, 51, 51, 1);
+}
+
+#workspaces {
+    margin: 0 5px;
+}
+
+#workspaces button {
+    padding:    0 5px;
+    color:      rgba(217, 216, 216, 0.7);
+}
+
+#workspaces button.visible {
+    color:      rgba(217, 216, 216, 1);
+}
+
+#workspaces button.focused {
+    border-bottom: 3px solid rgba(255, 173, 0, 1);
+    border-top: 3px solid rgba(217, 216, 216, 0);
+}
+
+#workspaces button.urgent {
+    color:      rgba(229, 106, 84, 1);
+}
+
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
+    margin:     0px 6px 0px 10px;
+    min-width:  10px;
+}
+
+#clock {
+    margin:     0px 16px 0px 10px;
+    min-width:  140px;
+}
+
+#battery.warning {
+   color:       rgba(249, 216, 122, 1);
+}
+
+#battery.critical {
+    color:      rgba(229, 106, 84, 1);
+}
+
+#battery.charging {
+    color:      rgba(217, 216, 216, 1);
+}
