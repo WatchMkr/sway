@@ -1,0 +1,14 @@
+max-visible=5
+layer=top
+anchor=top-right
+font=Fira 10
+width=350
+margin=10
+border-size=1
+background-color=#333333FF
+border-color=#94EBEBFF
+text-color=#F2F2F2FF
+icons=1
+icon-path=/usr/share/icons/Pop
+markup=1
+default-timeout=8000
