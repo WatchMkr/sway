@@ -36,7 +36,6 @@ output eDP-1 scale 1
 # GNOME setup
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
-exec --no-startup-id 'nm-applet --indicator'
 
 # Gaps
 gaps inner 5
@@ -44,10 +43,10 @@ gaps outer 0
 smart_borders on
 default_border pixel 2
 
+# Notifications
+exec mako
+
 # Start apps
-#exec --no-startup-id albert
-#exec --no-startup-id dunst
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # custom keybindings
 bindsym $mod+Shift+Return exec firefox
