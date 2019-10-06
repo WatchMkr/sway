@@ -23,8 +23,10 @@ bindsym XF86MonBrightnessDown exec light -U 2 && light -G | cut -d'.' -f1 > /tmp
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 2%+ unmute && amixer -D pulse sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > /tmp/wobpipe
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 2%- unmute && amixer -D pulse sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > /tmp/wobpipe
 
+# Screenlock
+bindsym $mod+n exec swaylock -l --color=272727
+
 # Suspend (Todo)
-bindsym $mod+n exec swaylock --color=333333
 
 # Wallpaper
 output DP-1 background /usr/share/backgrounds/pop/ricardo-gomez-angel-180819-blue.jpg fill
@@ -55,7 +57,7 @@ bindsym $mod+Shift+Return exec firefox
 
 # Colors
 # Pop Dark Brown
-set $active #333333
+set $active #272727
 set $fg     #FFFFFF
 # Pop Light Brown
 set $bg     #524f4C
@@ -74,16 +76,23 @@ font pango:Fira Sans Regular 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# Start a terminal
+bindsym $mod+Return exec gnome-terminal floating enable
+
+# Always start calculator in floating mode
+for_window [app_id="gnome-calculator"] floating enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# ROFI Menu
+# ROFI launcher
 bindsym $mod+d exec rofi -show run
 bindsym $mod+slash exec rofi -show drun
 bindsym $mod+tab exec rofi -show window
+
+# ROFI alternative fzf+terminal launcher
+bindsym $mod+x exec gnome-terminal --name=launcher -e ~/.config/sway/launcher
+for_window [app_id="^launcher$"] floating enable, border none
 
 # change focus
 bindsym $mod+j focus left

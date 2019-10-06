@@ -2,9 +2,8 @@
  * Author: Primetoxinz
  */
 * {
-    text-color:			 #f2f2f2;
-    background-color:            #333333;
-    lightbg:                     #534c48;
+    text-color:			 White;
+    background-color:            #272727;
     red:                         #E56A54;
     orange:                      #FFD7A1; 
     blue:                        #94EBEB; 
@@ -21,20 +20,21 @@
     alternate-active-background: @blue;
     bordercolor:                 @foreground;
     normal-background:           @background;
-    selected-normal-background:  @blue;
-    separatorcolor:              @orange;
+    selected-normal-background:  @orange;
+    separatorcolor:              @blue;
     spacing:                     2;
     urgent-background:           @red;
     alternate-urgent-foreground: @foreground;
     selected-urgent-background:  @red;
     alternate-active-foreground: @foreground;
-    selected-active-background:  @blue;
-    active-background:           @orange;
+    selected-active-background:  @orange;
+    active-background:           @blue;
 }
 #window {
     border:     0;
     text-color: @foreground;
     background-color: rgba ( 0, 0, 0, 0 % );
+    width: 800px;
     padding:    5;
     text-color: @bordercolor;
     background-color: @background;
@@ -42,7 +42,7 @@
 #mainbox {
     border:  1;
     padding: 5;
-    border-color: @blue;
+    border-color: @orange;
 }
 #message {
     border:     1px dash 0px 0px ;
@@ -70,11 +70,11 @@
     background-color: @urgent-background;
 }
 #element.normal.active {
-    text-color: #000000;
+    text-color: Black;
     background-color: @active-background;
 }
 #element.selected.normal {
-    text-color: #000000;
+    text-color: Black;
     background-color: @selected-normal-background;
 }
 #element.selected.urgent {
@@ -94,7 +94,7 @@
     background-color: @alternate-urgent-background;
 }
 #element.alternate.active {
-    text-color: @alternate-active-foreground;
+    text-color: #000000;
     background-color: @alternate-active-background;
 }
 #sidebar {
