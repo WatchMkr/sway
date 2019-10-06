@@ -9,10 +9,10 @@ Comment out `#WaylandEnable=false`
 ```sudo apt install sway swayidle swaylock rofi```
 
 ### Install Font Awesome 5
-```wget https://use.fontawesome.com/releases/v5.11.2/fontawesome-free-5.11.2-desktop.zip
-unzip fontawesome-free-5.11.2-desktop.zip
-sudo mkdir /usr/share/fonts/truetype/font-awesome/
-sudo cp fontawesome-free-5.11.2-desktop/otfs/Font\ Awesome\ 5\ Free-Regular-400.otf /usr/share/fonts/truetype/font-awesome/font-awesome-free-regular.otf
+```wget https://use.fontawesome.com/releases/v5.11.2/fontawesome-free-5.11.2-desktop.zip```
+```unzip fontawesome-free-5.11.2-desktop.zip```
+```sudo mkdir /usr/share/fonts/truetype/font-awesome/```
+```sudo cp fontawesome-free-5.11.2-desktop/otfs/Font\ Awesome\ 5\ Free-Regular-400.otf /usr/share/fonts/truetype/font-awesome/font-awesome-free-regular.otf
 sudo cp fontawesome-free-5.11.2-desktop/otfs/Font\ Awesome\ 5\ Free-Solid-900.otf /usr/share/fonts/truetype/font-awesome/font-awesome-free-solid.otf```
 
 ### Install light
