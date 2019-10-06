@@ -1,13 +1,13 @@
 # Sway-Pop Setup WIP
 
 ### Enable Wayland
-`sudo nano /etc/gdm3/custom.conf`
+```sudo nano /etc/gdm3/custom.conf```
 
 Comment out #WaylandEnable=false
-`#WaylandEnable=false`
+```#WaylandEnable=false```
 
 ### Install sway
-`sudo apt install sway swayidle swaylock rofi`
+```sudo apt install sway swayidle swaylock rofi```
 
 ### Install Font Awesome 5
 ```wget https://use.fontawesome.com/releases/v5.11.2/fontawesome-free-5.11.2-desktop.zip
@@ -21,10 +21,10 @@ sudo cp fontawesome-free-5.11.2-desktop/otfs/Font\ Awesome\ 5\ Free-Solid-900.ot
 sudo dpkg -i light_1.2_amd64.deb```
 
 ### Add your user to the video group
-`sudo usermod -a -G video username`
+```sudo usermod -a -G video username```
 
 ### Install dependencies
-`sudo apt install meson cmake pkg-config wayland-protocols libwayland-dev libcairo2-dev libpango1.0-dev libsystemd-dev libgdk-pixbuf2.0-dev scdoc libinput-dev libgtkmm-3.0-dev libdbusmenu-gtk3-dev libjsoncpp-dev libnl-3-dev libnl-genl-3-dev libpulse-dev libmpdclient-dev`
+```sudo apt install meson cmake pkg-config wayland-protocols libwayland-dev libcairo2-dev libpango1.0-dev libsystemd-dev libgdk-pixbuf2.0-dev scdoc libinput-dev libgtkmm-3.0-dev libdbusmenu-gtk3-dev libjsoncpp-dev libnl-3-dev libnl-genl-3-dev libpulse-dev libmpdclient-dev```
 
 ### Install wob
 ```git clone git@github.com:WatchMkr/wob.git
