@@ -3,8 +3,7 @@
 ### Enable Wayland
 ```sudo nano /etc/gdm3/custom.conf```
 
-Comment out #WaylandEnable=false
-```#WaylandEnable=false```
+Comment out `#WaylandEnable=false`
 
 ### Install sway
 ```sudo apt install sway swayidle swaylock rofi```
