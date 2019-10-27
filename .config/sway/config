@@ -11,8 +11,8 @@ bindsym XF86MonBrightnessUp exec light -A 2 && light -G | cut -d'.' -f1 > /tmp/w
 bindsym XF86MonBrightnessDown exec light -U 2 && light -G | cut -d'.' -f1 > /tmp/wobpipe
 
 # Audio hotkeys
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 2%+ unmute && amixer -D pulse sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > /tmp/wobpipe
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 2%- unmute && amixer -D pulse sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > /tmp/wobpipe
+bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > /tmp/wobpipe
+bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > /tmp/wobpipe
 
 # Screenlock
 bindsym $mod+n exec swaylock -l --color=272727
@@ -22,7 +22,7 @@ bindsym $mod+n exec swaylock -l --color=272727
 # Wallpaper
 output DP-1 background /usr/share/backgrounds/pop/ricardo-gomez-angel-180819-blue.jpg fill
 output eDP-1 background /usr/share/backgrounds/pop/kate-hazen-mort1mer.png fill
-output eDP-1 scale 1
+output eDP-1 scale 2
 
 # GNOME setup
 exec --no-startup-id gnome-settings-daemon

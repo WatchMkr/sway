@@ -58,8 +58,8 @@
             "default": ["", "", "", ""]
         },
         "scroll-step": 10,
-	"on-scroll-up":	"amixer -D pulse sset Master 2%+ unmute && amixer -D pulse sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > /tmp/wobpipe",
-	"on-scroll-down": "amixer -D pulse sset Master 2%- unmute && amixer -D pulse sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > /tmp/wobpipe",
+	"on-scroll-up":	"pamixer -ui 2 && pamixer --get-volume > /tmp/wobpipe",
+	"on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > /tmp/wobpipe",
         "on-click": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center sound",
         "tooltip": false
     },
@@ -67,7 +67,7 @@
         "interval": 1,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/spotify.sh",
-        "exec-if": "pgrep spotify",
+"exec-if": "pgrep spotify",
         "escape": true
     },
     "backlight": {
