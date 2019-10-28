@@ -2,8 +2,6 @@
 
 set $mod Mod4
 
-# My mods {
-
 ### Screen brightness hotkeys
 
 exec mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob
@@ -13,11 +11,11 @@ bindsym XF86MonBrightnessDown exec light -U 2 && light -G | cut -d'.' -f1 > /tmp
 # Audio hotkeys
 bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > /tmp/wobpipe
 bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > /tmp/wobpipe
+bindsym XF86AudioMute exec pamixer -m
 
-# Screenlock
+# Screenlock & TODO Suspend & Power Button
 bindsym $mod+n exec swaylock -l --color=272727
-
-# Suspend (Todo)
+bindsym XF86PowerOff exec "swaynag -t warning -e bottom -f Fira --background 272727 --text ffffff --button-background e56a54 --button-padding 4 --message-padding 4 --border-bottom-size 0 --details-border-size 0 --button-border-size 0 -m 'Exit Sway' -B 'Logout' 'swaymsg exit' -B 'Suspend' 'exec systemctl suspend' -B 'Reboot' 'exec reboot' -B 'Shutdown' 'exec systemctl poweroff'"
 
 # Wallpaper
 output DP-1 background /usr/share/backgrounds/pop/ricardo-gomez-angel-180819-blue.jpg fill
@@ -57,8 +55,6 @@ client.focused_inactive $bg     $bg     $fg   $fg        $bg
 client.unfocused        $bg     $bg     $fg   $fg        $bg
 client.urgent           $bg     $bg     $fg   $fg        $bg
 
-# }
-
 # Font for window titles.
 font pango:Fira Sans Regular 10
 
@@ -80,8 +76,8 @@ bindsym $mod+slash exec rofi -show drun
 bindsym $mod+tab exec rofi -show window
 
 # ROFI alternative fzf+terminal launcher
-bindsym $mod+x exec gnome-terminal --name=launcher -- ~/.config/sway/launcher
-for_window [app_id="^launcher$"] floating enable, border none
+#bindsym $mod+x exec gnome-terminal --name=launcher -- ~/.config/sway/launcher
+#for_window [app_id="^launcher$"] floating enable, border none
 
 # change focus
 bindsym $mod+j focus left
@@ -172,8 +168,21 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Exit sway
+bindsym $mod+Shift+e exec "swaynag -t warning -e bottom -f Fira --background 272727 --text ffffff --button-background e56a54 --button-padding 4 --message-padding 4 --border-bottom-size 0 --details-border-size 0 --button-border-size 0 -m 'Exit Sway' -B 'Logout' 'swaymsg exit' -B 'Suspend' 'exec systemctl suspend' -B 'Reboot' 'exec reboot' -B 'Shutdown' 'exec systemctl poweroff'"
+
+# Scratchpad
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

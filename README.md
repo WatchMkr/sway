@@ -31,7 +31,7 @@ Add your user to the video group
 sudo apt install meson cmake pkg-config wayland-protocols libwayland-dev libcairo2-dev \
 libpango1.0-dev libsystemd-dev libgdk-pixbuf2.0-dev scdoc libinput-dev libgtkmm-3.0-dev \
 libdbusmenu-gtk3-dev libjsoncpp-dev libnl-3-dev libnl-genl-3-dev libpulse-dev libmpdclient-dev \
-libboost-program-options-dev libboost-dev libpulse-dev
+libboost-program-options-dev libboost-dev libpulse-dev grim slurp
 ```
 
 ### Install wob
