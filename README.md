@@ -61,10 +61,12 @@ sudo ninja -C build install
 ```
 
 ### Install pamixer
+```
 git clone https://github.com/WatchMkr/pamixer.git
 cd pamixer
 make
 sudo make install
+```
 
 ### Install config
 ```
